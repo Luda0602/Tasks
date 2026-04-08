@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задача 5</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <a href="../index.html" class="back">← Назад</a>
+
+      <div class="card">
+        <h1>Задача 5</h1>
+
+        <p class="description">
+          Дано послідовність оцінок учня. Підрахувати кількість:
+          <br />1) двійок <br />2) кількість хороших оцінок (добре, відмінно);
+          <br />3) кількість оцінок, які нижче середнього.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function inputMarks(count) {
+        let arr = [];
+        for (let i = 0; i < count; i++) {
+          const mark = parseInt(prompt(`Оцінка ${i + 1}`, ""));
+          arr.push(mark);
+        }
+        return arr;
+      }
+
+      function getAverage(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+          sum += arr[i];
+        }
+        return sum / arr.length;
+      }
+
+      function getTwosCount(arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] === 2) count++;
+        }
+        return count;
+      }
+
+      function getGoodMarksCount(arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] >= 7) count++;
+        }
+        return count;
+      }
+
+      function getBelowAverageCount(arr, avg) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] < avg) count++;
+        }
+        return count;
+      }
+
+      const n = parseInt(prompt("Скільки оцінок?", "5"));
+
+      const marks = inputMarks(n);
+
+      const avg = getAverage(marks);
+
+      const twos = getTwosCount(marks);
+      const good = getGoodMarksCount(marks);
+      const belowAvg = getBelowAverageCount(marks, avg);
+
+      document.write(`Оцінки: ${marks}<br>`);
+      document.write(`Середній бал: ${avg.toFixed(2)}<br><br>`);
+
+      document.write(`Кількість двійок: ${twos}<br>`);
+      document.write(`Кількість хороших оцінок: ${good}<br>`);
+      document.write(`Кількість нижче середнього: ${belowAvg}`);
+    </script>
+  </body>
+</html>

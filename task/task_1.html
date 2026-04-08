@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задача 1</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <a href="../index.html" class="back">← Назад</a>
+
+      <div class="card">
+        <h1>Задача 1</h1>
+
+        <p class="description">
+          Дано масив, який містить оцінки з К предметів. Знайти середній бал і
+          з’ясувати до якої категорії він відноситься (відмінник, двійочник (має
+          хоча би одну двійку), хорошист (оцінки добре і відмінно), трійочник(є
+          хоча би одна трійка)).
+        </p>
+      </div>
+    </div>
+    <script>
+      function inputArray(count) {
+        let arr = [];
+        for (let i = 0; i < count; i++) {
+          const mark = parseInt(prompt(`Введіть оцінку №${i + 1}`, ""));
+          arr.push(mark);
+        }
+        return arr;
+      }
+
+      function getAverage(markList) {
+        let sum = 0;
+        for (let i = 0; i < markList.length; i++) {
+          sum += markList[i];
+        }
+        return sum / markList.length;
+      }
+
+      function getCategory(markList) {
+        let has2 = false;
+        let has3 = false;
+        let hasOnly5 = true;
+        let hasOnly4and5 = true;
+
+        for (let i = 0; i < markList.length; i++) {
+          let mark = markList[i];
+
+          if (mark === 2) has2 = true;
+          if (mark === 3) has3 = true;
+          if (mark !== 5) hasOnly5 = false;
+          if (mark < 4) hasOnly4and5 = false;
+        }
+
+        if (has2) return "двійочник";
+        else if (has3) return "трійочник";
+        else if (hasOnly5) return "відмінник";
+        else if (hasOnly4and5) return "хорошист";
+        else return "невідома категорія";
+      }
+
+      const count = parseInt(prompt("Скільки оцінок?", "5"));
+
+      const marks = inputArray(count);
+
+      const avg = getAverage(marks);
+      const category = getCategory(marks);
+
+      document.write(`Оцінки: ${marks}<br>`);
+      document.write(`Середній бал: ${avg.toFixed(2)}<br>`);
+      document.write(`Категорія: ${category}`);
+    </script>
+  </body>
+</html>

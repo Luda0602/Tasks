@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задача 3</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <a href="../index.html" class="back">← Назад</a>
+
+      <div class="card">
+        <h1>Задача 3</h1>
+
+        <p class="description">
+          Дано масив імен учнів. З’ясувати скільки разів зустрічається ім’я
+          «Іван».
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function inputNames(count) {
+        let arr = [];
+        for (let i = 0; i < count; i++) {
+          const name = prompt(`Введіть ім'я учня №${i + 1}`, "");
+          arr.push(name);
+        }
+        return arr;
+      }
+
+      function getIvanCount(namesList) {
+        let count = 0;
+        for (let i = 0; i < namesList.length; i++) {
+          if (namesList[i] === "Іван") count++;
+        }
+        return count;
+      }
+
+      const n = parseInt(prompt("Скільки учнів?", "5"));
+
+      const names = inputNames(n);
+
+      const result = getIvanCount(names);
+
+      document.write(`Імена: ${names}<br>`);
+      document.write(`Кількість "Іван": ${result}`);
+    </script>
+  </body>
+</html>

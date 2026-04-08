@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задача 1</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <a href="../index.html" class="back">← Назад</a>
+
+      <div class="card">
+        <h1>Задача 4</h1>
+
+        <p class="description">
+          Дано послідовність номерів автомобілів. Підрахувати кількість номерів,
+          які :
+          <br />• починаються на букву «А» (для отримання першої літери можна
+          також звернутися до номера авто як string ніби як до масиву за номером
+          0 - autoNum[0]-перша літера); <br />• перша і остання літери
+          співпадають; <br />• складаються з більше ніш 5 символів;
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function inputAutoNumbers(count) {
+        let arr = [];
+        for (let i = 0; i < count; i++) {
+          const num = prompt(`Введіть номер авто №${i + 1}`, "");
+          arr.push(num);
+        }
+        return arr;
+      }
+
+      function getCountStartA(arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i][0] === "А") count++;
+        }
+        return count;
+      }
+
+      function getSameFirstLast(arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+          let str = arr[i];
+          if (str[0] === str[str.length - 1]) count++;
+        }
+        return count;
+      }
+
+      function getLengthMore5(arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i].length > 5) count++;
+        }
+        return count;
+      }
+
+      const n = parseInt(prompt("Скільки номерів авто?", "5"));
+
+      const autoNumbers = inputAutoNumbers(n);
+
+      const countA = getCountStartA(autoNumbers);
+      const countSame = getSameFirstLast(autoNumbers);
+      const countLong = getLengthMore5(autoNumbers);
+
+      document.write(`Номери: ${autoNumbers}<br>`);
+      document.write(`Починаються на "А": ${countA}<br>`);
+      document.write(`Перша і остання співпадають: ${countSame}<br>`);
+      document.write(`Довжина > 5: ${countLong}`);
+    </script>
+  </body>
+</html>
