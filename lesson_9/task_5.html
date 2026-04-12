@@ -19,8 +19,13 @@
       </div>
     </div>
     <script>
-      let input = prompt("Вводити числа через пробіл");
-      let array = input.split(" ").map(Number);
+      let count = parseInt(prompt("Скільки елементів?"));
+      let array = [];
+
+      for (let i = 0; i < count; i++) {
+        let num = parseFloat(prompt("Введіть число"));
+        array.push(num);
+      }
 
       let product = 1;
 
@@ -30,7 +35,7 @@
         }
       }
 
-      document.write(`Добуток: ${product}`);
+      document.write(product);
     </script>
   </body>
 </html>

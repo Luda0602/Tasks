@@ -19,8 +19,13 @@
       </div>
     </div>
     <script>
-      let input = prompt("Вводити імена через пробіл");
-      let names = input.split(" ");
+      let count = parseInt(prompt("Скільки імен?"));
+      let names = [];
+
+      for (let i = 0; i < count; i++) {
+        let name = prompt("Введіть ім'я");
+        names.push(name);
+      }
 
       let firstLetters = [];
 

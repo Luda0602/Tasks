@@ -20,8 +20,13 @@
       </div>
     </div>
     <script>
-      let input = prompt("Вводити ціни через пробіл");
-      let prices = input.split(" ").map(Number);
+      let count = parseInt(prompt("Скільки цін?"));
+      let prices = [];
+
+      for (let i = 0; i < count; i++) {
+        let price = parseFloat(prompt("Введіть ціну"));
+        prices.push(price);
+      }
 
       for (let i = 0; i < prices.length; i++) {
         if (prices[i] > 1000) {

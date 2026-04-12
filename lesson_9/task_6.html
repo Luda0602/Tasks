@@ -20,8 +20,13 @@
       </div>
     </div>
     <script>
-      let input = prompt("Вводити числа через пробіл");
-      let arr = input.split(" ").map(Number);
+      let count = parseInt(prompt("Скільки елементів?"));
+      let arr = [];
+
+      for (let i = 0; i < count; i++) {
+        let num = parseFloat(prompt("Введіть число"));
+        arr.push(num);
+      }
 
       for (let i = 0; i < arr.length; i++) {
         if (arr[i] > arr[0]) {

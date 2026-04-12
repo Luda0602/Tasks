@@ -20,8 +20,13 @@
       </div>
     </div>
     <script>
-      let input = prompt("Вводити номери авто через пробіл");
-      let cars = input.split(" ");
+      let count = parseInt(prompt("Скільки номерів авто?"));
+      let cars = [];
+
+      for (let i = 0; i < count; i++) {
+        let car = prompt("Введіть номер авто");
+        cars.push(car);
+      }
 
       let result = [];
 
