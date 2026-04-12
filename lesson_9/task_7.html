@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задача 7</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <a href="../index.html" class="back">← Назад</a>
+
+      <div class="card">
+        <h1>Задача 7</h1>
+
+        <p class="description">
+          Дано масив цін. Змінити цей масив так, що на ціни товарів, які більші
+          за 1000 грн. дати 30% знижки.
+        </p>
+      </div>
+    </div>
+    <script>
+      let input = prompt("Введіть ціни через пробіл");
+      let prices = input.split(" ").map(Number);
+
+      for (let i = 0; i < prices.length; i++) {
+        if (prices[i] > 1000) {
+          prices[i] *= 0.7;
+        }
+      }
+
+      document.write(prices);
+    </script>
+  </body>
+</html>

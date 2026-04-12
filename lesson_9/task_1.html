@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задача 1</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <a href="../index.html" class="back">← Назад</a>
+
+      <div class="card">
+        <h1>Задача 1</h1>
+
+        <p class="description">
+          Користувач вводить кількість елементів. Створити масив, що складається
+          з вказаної кількості елементів заповнених нулями.
+        </p>
+      </div>
+    </div>
+    <script>
+      let count = parseInt(prompt("Введіть кількість елементів"));
+
+      let arr = [];
+
+      for (let i = 0; i < count; i++) {
+        arr.push(0);
+      }
+
+      document.write(arr);
+    </script>
+  </body>
+</html>

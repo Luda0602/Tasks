@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задача 10</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <a href="../index.html" class="back">← Назад</a>
+
+      <div class="card">
+        <h1>Задача 10</h1>
+
+        <p class="description">
+          Дано масив цін у грн. Податок складає 20%. Сформувати масив, який буде
+          містити величину сплаченого податку у грн.
+        </p>
+      </div>
+    </div>
+    <script>
+      let input = prompt("Введіть ціни через пробіл");
+      let prices = input.split(" ").map(Number);
+
+      let taxes = [];
+
+      for (let i = 0; i < prices.length; i++) {
+        taxes.push(prices[i] * 0.2);
+      }
+
+      document.write(taxes);
+    </script>
+  </body>
+</html>

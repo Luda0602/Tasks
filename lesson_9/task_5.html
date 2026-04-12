@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задача 5</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <a href="../index.html" class="back">← Назад</a>
+
+      <div class="card">
+        <h1>Задача 5</h1>
+
+        <p class="description">
+          Дано масив елементів. Знайти добуток додатних елементів
+        </p>
+      </div>
+    </div>
+    <script>
+      let input = prompt("Введіть числа через пробіл");
+      let array = input.split(" ").map(Number);
+
+      let product = 1;
+
+      for (let element of array) {
+        if (element > 0) {
+          product *= element;
+        }
+      }
+
+      document.write(`Добуток: ${product}`);
+    </script>
+  </body>
+</html>

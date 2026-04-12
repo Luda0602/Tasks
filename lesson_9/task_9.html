@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Задача 9</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <a href="../index.html" class="back">← Назад</a>
+
+      <div class="card">
+        <h1>Задача 9</h1>
+
+        <p class="description">
+          Дано масив імен. Сформувати масив з перших літер цих імен.
+        </p>
+      </div>
+    </div>
+    <script>
+      let input = prompt("Введіть імена через пробіл");
+      let names = input.split(" ");
+
+      let firstLetters = [];
+
+      for (let i = 0; i < names.length; i++) {
+        firstLetters.push(names[i][0]);
+      }
+
+      document.write(firstLetters);
+    </script>
+  </body>
+</html>
